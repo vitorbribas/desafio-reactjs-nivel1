@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 
 import "./styles.css";
 
 function App() {
+  const [projects, setProjects] = useState([]);
+
   async function handleAddRepository() {
     // TODO
   }
