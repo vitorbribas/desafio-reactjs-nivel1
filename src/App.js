@@ -13,7 +13,15 @@ function App() {
   }, [])
 
   async function handleAddRepository() {
-    // TODO
+    const response = await api.post('repositories', {
+      title: `Novo Projeto ${Date.now()}`,
+      url: `URL ${Date.now}`,
+      techs: ['Tec1', 'Tec2']
+    });
+
+    const newProject = response.data;
+
+    setProjects([...projects, newProject]);
   }
 
   async function handleRemoveRepository(id) {
